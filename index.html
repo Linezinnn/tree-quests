@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeQuests</title>
+
+    <link rel="shortcut icon" href="./assets/svg/treeQuests-logo.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="./assets/index/css/index.css">
+    <link rel="stylesheet" href="./assets/export-questionary/insert-on-list/container.css">
+    <link rel="stylesheet" href="./assets/export-questionary/create-export/messages/messages.css">
+    <link rel="stylesheet" href="./assets/import-questionary/components/messages/messages.css">
+    <link rel="stylesheet" href="./assets/import-questionary/import-questionary.css">
+    <link rel="stylesheet" href="./assets/global-styles/media-queries.css">
+
+    <script src="./assets/index/js/put-questionarys.js" type="module"></script>
+    <script src="./assets/openQuestionary/js/open-questionary.js"></script>
+    <script src="./assets/export-questionary/main.js" type="module"></script>
+    <script src="./assets/index/js/utils.js" type="module" defer></script>
+    <script src="./assets/import-questionary/components/main.js" type="module" defer></script>
+    <script src="./assets/index/js/clear-history.js" defer></script>
+    <script src="./assets/index/js/without-questionaries.js" defer></script>
+    <script src="./assets/index/js/list-menu.js" defer></script>
+    <script src="./assets/index/js/search/search.js" type="module" defer></script>
+    <script src="./assets/index/js/search/open-close.js" defer></script>
+    
+</head>
+<body>
+    <section id="main">
+        <header>
+            <nav>
+                <img id="logo" src="./assets/svg/treeQuests-logo.svg" alt="Logo da TreeQuests">
+                <h2>Home</h2>
+
+                <div class="input-wrapper">
+                    <img id="open-search-mobile" src="./assets/svg/magnifying-glass (1).svg" alt="Pesquisar">
+                    <input type="search" id="input-search" placeholder="Pesquise por tags e questionários">
+                    <img id="close-search-mobile" src="./assets/svg/x-black.svg" alt="Fechar pesquisa">
+                </div>
+
+                <div class="list-menu">
+                    <img id="open-menu-list" src="./assets/svg/list-fill.svg">
+                    <ul id="menu-list" class="hidden">
+                        <li id="close-list"><img class="close-list" src="./assets/svg/x (1).svg" alt="Fechar lista"></li>
+                        <li><a href="./assets/create-questionary/create.html">Criar</a></li>
+                        <li><button onclick="closeMenu()" id="import-btn">Importar</button></li>
+                        <li><button onclick="closeMenu()" id="export-btn">Exportar</button></li>
+                        <li><button onclick="closeMenu()" id="btn-clear">Limpar dados</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="import-container hidden">
+            <div class="messages">
+                <p class="import-success hidden">
+                    Sua importação foi feita com sucesso!
+                </p>
+                <p class="import-failed hidden">
+                    Algo deu errado com a sua importação.
+                </p>
+            </div>
+            
+            <div class="import-box">
+                <div class="header-import">
+                    <h2>Importar</h2>
+                    <svg class="import-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg>
+                </div>
+
+                <div class="content-import">
+                    <input type="file" id="upload-file">
+                    <label for="upload-file" class="custom-file-upload">
+                        Escolher arquivo
+                    </label>
+                    <textarea id="content" placeholder="Digite o prompt do questionário aqui"></textarea>
+                    <button id="send-prompt">Criar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-container hidden">
+            <div class="messages">
+                <p class="export-success hidden">
+                    Seu download foi feito com sucesso!
+                </p>
+                <p class="export-failed hidden">
+                    Algo deu errado no seu download.
+                </p>
+            </div>
+
+            <div class="export-box">
+                <div class="header-export">
+                    <h2>Exportar</h2>
+                    <svg class="export-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg>
+                </div>
+
+                <div class="content-export">
+                    <p class="without-questionaries">
+                        Não há questionários registrados no momento.
+                        <a href="./create.html">Criar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questionaries-content">
+            <div class="boxes-content">
+                <p class="without-questionaries">Não há nenhum questionário cadastrado</p>
+            </div>
+        </div> 
+        
+    </section>
+</body>
+</html>

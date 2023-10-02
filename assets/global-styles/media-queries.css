@@ -1,0 +1,61 @@
+@media (max-width: 900px){
+    .boxes-content{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width: 680px){
+    .create-questionaries-btns{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+    .box-question{
+        width: 100%;
+    }
+    .boxes-content{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    #identify-question{
+        width: 360px;
+    }
+    .text-question, .type-question, .pts-question, #name-question, #category-question, 
+    #time-question, #menssage-question, #view-question{
+        width: 330px;
+        margin: 0 auto;
+    }
+    .text-question, #name-question, #menssage-question{
+        width: 310px;
+    }
+    .box-answer{
+        width: 300px;
+    }
+
+    #desc-question{
+        width: 90%;
+    }
+    .desc-questionary{
+        width: 90%;
+    }
+
+    .content-export .item-list{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-answer{
+        gap: 12px;
+    }
+
+    header nav h2,
+    header nav .input-wrapper input{
+        display: none;
+    }
+    header nav .input-wrapper #open-search-mobile{
+        display: block;
+    }
+    
+}

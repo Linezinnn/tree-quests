@@ -1,0 +1,28 @@
+.messages p{
+    padding: 16px 48px;
+    
+    min-width: 460px;
+    transition: 400ms;
+    
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+
+    position: fixed;
+    z-index: 1;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 24px;
+    top: 16px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.295);
+    
+}
+.messages .export-success{
+    background: rgb(103, 230, 103);
+}
+.messages .export-failed{
+    background: rgb(230, 103, 103);
+}

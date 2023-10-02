@@ -1,0 +1,7 @@
+export const withoutQuestionaries = document.querySelector(".without-questionaries")
+export const exportBtn = document.querySelector("#export-btn")
+export const exportContainer = document.querySelector(".export-container")
+export const closeExportBtn = document.querySelector(".export-close")
+export const contentExport = document.querySelector(".content-export")
+export const messageExportSucess = document.querySelector(".export-container .messages .export-success")
+export const messageExportFailed = document.querySelector(".export-container .messages .export-failed")

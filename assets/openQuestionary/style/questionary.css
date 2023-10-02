@@ -1,0 +1,301 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#questionary-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: var(--theme);
+    min-height: 100vh;
+}
+.start-questionary{
+    min-width: 520px;
+    max-width: 1000px;
+    padding: 52px;
+    border-radius: 7px;
+    background: var(--scolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+    margin: 12px;
+}
+.start-questionary h1{
+    font-size: 40px;
+    max-width: 750px;
+    color: var(--t-letter-color);
+}
+.start-questionary h5{
+    font-size: 15px;
+    position: relative;
+    top: 50px;
+    color: var(--t-letter-color);
+}
+.start-questionary h1{
+    text-align: center;
+}
+.start-questionary p{
+    position: relative;
+    align-self: flex-start;
+    top: -15px;
+    max-width: 100%;
+    line-break: anywhere;
+    color: var(--letter-color);
+}
+.start-questionary input{
+    border: 2px solid var(--pcolor);
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 8px
+}
+.start-questionary button{
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    transform: scale(1.2);
+    background: var(--pcolor);
+    color: var(--b-letter-color);
+}
+.start-questionary svg{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    left: 35px;
+    top: 25px;
+    color: var(--pcolor);
+}
+
+/* QUESTIONS */
+
+.questions-content{
+    max-width: 1300px;
+    border-radius: 7px;
+    background: var(--scolor);
+    display: none;
+    flex-direction: column;
+    min-height: 330px;
+    position: relative;
+    overflow: hidden;
+}
+.question{
+    background: var(--tcolor);
+    padding: 20px 32px 15px;
+    min-height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.question .question-info{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.question h3{
+    color: var(--t-letter-color);
+}
+.timer{
+    height: 5px;
+    width: 100%;
+    left: -2px;
+    background-color: var(--pcolor);
+    position: absolute;
+    top: 0;
+    transition: width var(--time);
+}
+
+.question button{
+    border: none;
+    background-color: var(--pcolor);
+    color: var(--b-letter-color);
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.question p{
+    text-overflow: ellipsis;
+    max-width: 1050px;
+    padding-left: 10px;
+    color: var(--t-letter-color);
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+}
+.radio input[type="radio"]{
+    max-width: 10px;
+    opacity: 0;
+    min-height: 60px;
+    left: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+.radio label{
+    display: inline-block;
+    padding-left: 50px;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+}
+.radio label:before{
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border: 2px solid var(--pcolor);
+    border-radius: 50%;
+    top: -15px;
+    position: absolute;
+    left: 45px;
+    font-size: 30px;
+}
+.radio input[type="radio"]:checked + label:after{
+    content: '';
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: var(--pcolor);
+    position: absolute;
+    left: 50px;
+    top: -10px;
+}
+.radio p{
+    left: 20px;
+    position: relative;
+    background: var(--tcolor);
+    padding: 22px 22px 22px 90px;
+    border-radius: 15px;
+    max-width: 1145px;
+    min-width: 420px;
+    margin-right: 42px;
+}
+
+/* FINAL QUESTIONARY */
+
+.final-questionary{
+    max-width: 1100px;
+    padding: 30px 0 15px;
+    border-radius: 7px;
+    background: var(--scolor);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+    margin: 12px;
+}
+.final-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    gap: 12px;
+}
+.final-content p{
+    margin: 24px;
+}
+.leaderboard, .results-box{
+    width: 300px;
+    height: 380px;
+    padding: 1px 15px 5px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 5px;
+    border: 3px solid var(--tcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-box{
+    width: 350px;
+    max-height: 380px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+.message-box::-webkit-scrollbar, .leaderboard::-webkit-scrollbar, .results-box::-webkit-scrollbar{
+    background-color: transparent;
+    width: 8px;
+}
+.message-box::-webkit-scrollbar-thumb, .leaderboard::-webkit-scrollbar-thumb, .results-box::-webkit-scrollbar-thumb{
+    background-color: var(--pcolor);
+    border-radius: 5px;
+}
+.final-questionary button{
+    border: none;
+    background-color: var(--pcolor);
+    color: var(--b-letter-color);
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.result{
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+}
+.results-box p, .leaderboard p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    top: -10px;
+}
+.errorMessage, .errorMessage2{
+    color:rgb(226, 41, 41);
+    display: none;
+    position: relative;
+    font-size: 14px;
+}
+.errorMessage2{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.timeOverBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 200px;
+    background: var(--b-letter-color);
+    color: var(--b-letter-color);
+    border-radius: 30px;
+    display: none;
+    align-items: center;
+    font-size: 27px;
+    overflow: hidden;
+}
+.timeOverBox div{
+    width: 100%;
+    height: 100%;
+    background: var(--pcolor);
+    position: absolute;
+    transition: width 3s linear;
+}
+
+.timeOverBox h1{
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    text-align: center;
+}

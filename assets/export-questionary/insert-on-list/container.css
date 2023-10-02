@@ -1,0 +1,91 @@
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.content-export{
+    width: 100%;
+    overflow: hidden;
+}
+.content-export .item-list{
+    display: flex;
+    list-style-type: none;
+    gap: 8px;
+    position: relative;
+    margin-left: -40px;
+    border-bottom: 2px solid #5f5f5f;
+    align-items: center;
+}
+.content-export .item-list li{
+    width: 100%;
+    padding: 8px;
+    overflow: hidden;
+}
+.content-export .item-list li:nth-child(1){
+    font-weight: bold;
+}
+.content-export .item-list li button{
+    background-color: transparent;
+    border: 2px solid #5f5f5f;
+    border-radius: 8px;
+    color: #5f5f5f;;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.export-container{
+    background-color: rgba(0, 0, 0, 0.315);
+
+    transition: 200ms;
+    overflow: hidden;
+
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 16px;
+
+    display: flex;
+    justify-content: center;
+}
+.export-box{
+    margin: 48px 12px 0;
+    background: whitesmoke;
+    min-height: 256px;
+    padding: 48px;
+    border-radius: 12px;
+    width: 660px;
+}
+.export-box .header-export{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.export-box .header-export svg.export-close{
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+
+.export-box .content-export{
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.export-box .content-export p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 28px;
+}
+.export-box .content-export p a{
+    color: #202020;
+    font-weight: bold;
+}
+
+.export-box .content-export p.hide{
+    display: none;
+}

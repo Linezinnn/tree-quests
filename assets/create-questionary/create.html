@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/create.css">
+    <link rel="stylesheet" href="../global-styles/media-queries.css">
+
+    <link rel="shortcut icon" href="../svg/treeQuests-logo.svg" type="image/x-icon">
+
+    <script src="./js/capture-values.js" type="module"></script>
+    <script src="./js/progress-bar.js"></script>
+    <script src="./js/new-answer.js"></script>
+    <script src="./js/remove-answer.js"></script>
+    <script src="./js/input-answers.js"></script>
+    <script src="./js/view-colors.js"></script>
+    <script src="./js/update-message-bg-image.js" defer></script>
+    
+    <title>Criar</title>
+</head>
+<body>
+    <section id="create-main">
+        
+        <div class="nav-bar">
+            <a href="../../index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg></a>
+            <h1>Criar</h1>
+            <div class="progress-bar">
+                <div><p>1</p></div>
+                <div class="state2"><p>2</p></div>
+                <div class="state3"><p>3</p></div>
+            </div>
+        </div>
+        <div id="identify-question">
+            <input type="text" id="name-question" placeholder="Digite o nome do questionário">
+            <select id="category-question">
+                <option value="Geral">Geral</option>
+                <option value="Animais">Animais</option>
+                <option value="Jogos">Jogos</option>
+                <option value="Filmes">Filmes</option>
+                <option value="Séries">Séries</option>
+                <option value="Geografia">Geografia</option>
+                <option value="Matematica">Matemática</option>
+            </select>
+            <select id="time-question">
+                <option value="0">Sem tempo</option>
+                <option value="30">30 segundos</option>
+                <option value="20">20 segundos</option>
+                <option value="15">15 segundos</option>
+                <option value="10">10 segundos</option>
+            </select>
+            <select id="view-question">
+                <option value="show">Mostrar as respostas no final</option>
+                <option value="hide">Não mostrar as respostas</option>
+            </select>
+
+            <div class="bg-imagem-box">
+                <input type="file" id="bg-image-question">
+                <label class="bg-image" for="bg-image-question">Escolher imagem de exibição</label>
+            </div>
+
+            <div class="box-p-color-question">
+                <p>Cor primária do questionário</p>
+                <input type="color" value="#000000" id="p-color-question" onchange="loadViewColors()">
+            </div>
+            <div class="box-s-color-question">
+                <p>Cor secundária do questionário</p>
+                <input type="color" value="#ecebeb" id="s-color-question" onchange="loadViewColors()">
+            </div>
+            <div class="box-t-color-question">
+                <p>Cor ternária do questionário</p>
+                <input type="color" value="#e2e1e1" id="t-color-question" onchange="loadViewColors()">
+            </div>
+            <div class="box-theme-question">
+                <p>Cor tema do questionário</p>
+                <input type="color" value="#ffffff" id="theme-question" onchange="loadViewColors()">
+            </div>  
+            <div class="box-letter-question">
+                <p>Cor da tipografia de texto do questionário</p>
+                <input type="color" value="#000000" id="letter-question" onchange="loadViewColors()">
+            </div>
+            <div class="box-letter-b-question">
+                <p>Cor da tipografia de botão do questionário</p>
+                <input type="color" value="#ffffff" id="b-letter-question" onchange="loadViewColors()">
+            </div>
+            <div class="box-letter-t-question">
+                <p>Cor da tipografia de título do questionário</p>
+                <input type="color" value="#000000" id="t-letter-question" onchange="loadViewColors()">
+            </div>
+
+            <div class="view-colors">
+                <div class="view-colors-container">
+                    <div class="question-view">
+                        <p>Sua pergunta aqui...</p>
+                        <button>Próximo</button>
+                    </div>
+                    <div class="answers-view">
+                        <div class="answer-view">
+                            <div></div>
+                            <p>Resposta</p>
+                        </div>
+                        <div class="answer-view">
+                            <div></div>
+                            <p>Resposta</p>
+                        </div>
+                        <div class="answer-view">
+                            <div></div>
+                            <p>Resposta</p>
+                        </div>
+                        <div class="answer-view">
+                            <div></div>
+                            <p>Resposta</p>
+                        </div>
+                        <div class="answer-view">
+                            <div></div>
+                            <p>Resposta</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="answer-content">
+                <div class="answer-values-content" id="answerQuestion1">
+                    <div class="reference-question">
+                        <h1>Questão 1</h1>
+                    </div>
+                    <input type="text" id="text-question1" class="text-question" placeholder="Digite a pergunta">
+                    <select onclick="refreshOptions(1)" id="type-question1" class="type-question">
+                        <option value="vd">Verdadeiro ou falso</option>
+                        <option value="3">2 respostas</option>
+                        <option value="4">3 respostas</option>
+                        <option value="5">4 respostas</option>
+                        <option selected value="6">5 respostas</option>
+                    </select>
+                    <select id="pts-question1" class="pts-question">
+                        <option value="1">1 ponto</option>
+                        <option value="2">2 pontos</option>
+                        <option value="3">3 pontos</option>
+                        <option value="4">4 pontos</option>
+                        <option value="5">5 pontos</option>
+                    </select>  
+                    <h1>Respostas</h1>
+                    <div class="boxes-answers">
+                        <div class="box-answer" id="box-answer1-1">
+                            <input type="radio" value="1" name="answers-question1" onclick="correctAnswer(1, 1)" id="validation-answer1-1">
+                            <input type="text" placeholder="Digite uma resposta" class="input-text1-1" id="answer1-1">
+                        </div>
+                        <div class="box-answer" id="box-answer2-1">
+                            <input type="radio" value="2" name="answers-question1" onclick="correctAnswer(2, 1)" id="validation-answer2-1">
+                            <input type="text" placeholder="Digite uma resposta" class="input-text2-1" id="answer2-1">
+                        </div>
+                        <div class="box-answer" id="box-answer3-1">
+                            <input type="radio" value="3" name="answers-question1" onclick="correctAnswer(3, 1)" id="validation-answer3-1">
+                            <input type="text" placeholder="Digite uma resposta" class="input-text3-1" id="answer3-1">
+                        </div>
+                        <div class="box-answer" id="box-answer4-1">
+                            <input type="radio" value="4" name="answers-question1" onclick="correctAnswer(4, 1)" id="validation-answer4-1">
+                            <input type="text" placeholder="Digite uma resposta" class="input-text4-1" id="answer4-1">
+                        </div>
+                        <div class="box-answer" id="box-answer5-1">
+                            <input type="radio" value="5" name="answers-question1" onclick="correctAnswer(5, 1)" id="validation-answer5-1">
+                            <input type="text" placeholder="Digite uma resposta" class="input-text5-1" id="answer5-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-answer">
+                    <button onclick="newQuestion()">Adicionar questão</button>
+                    <button onclick="window.openModal()">Excluir última questão</button>
+                </div>
+            </div>
+
+            <input type="text" id="menssage-question" placeholder="Digite uma mensagem final para o questionário">
+            <div class="errorMessage-box">
+                <p class="errorMessage">Ocorreu um erro. Verifique se um dos campos não foi preenchido.</p>
+            </div>
+
+        </div>
+
+        <div class="desc-questionary">
+            <textarea id="desc-question" placeholder="Digite uma descrição ou instrução para o questionário"></textarea>
+            <div class="errorMessage-box">
+                <p class="errorMessage2">Ocorreu um erro. Verifique se um dos campos não foi preenchido.</p>
+            </div>
+                
+            </div>
+        </div>
+
+        <div id="final-create">
+            <img src="../svg/complete.svg" alt="Imagem de uma pessoa completando uma tarefa">
+            <p><b>Sucesso!</b> Seu questionário foi arquivado, e estará disponível na página inicial</p>
+        </div>
+
+        <div class="options-bar">
+            <svg id="back-btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+              </svg>
+                <svg id="next-btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+        </div>
+    </section>
+</body>
+</html>

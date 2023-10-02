@@ -1,0 +1,26 @@
+@media (max-width: 680px){
+    .question, .question .question-info{
+        flex-direction: column;
+    }
+    .question p{
+        position: relative;
+        top: -16px;
+    }
+    .questions-content{
+        margin: 12px 12px;
+    }
+    .questions-content p{
+        max-width: 100%;
+        margin-bottom: 8px;
+    }
+    .radio p{
+        min-width: 150px;
+    }
+    .final-content{
+        flex-direction: column;
+    }
+    .start-questionary{
+        min-width: 0;
+    }
+
+}

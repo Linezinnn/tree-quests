@@ -1,0 +1,1 @@
+export const listOfQuestionaries = JSON.parse(localStorage.getItem('questionaryBD'))
