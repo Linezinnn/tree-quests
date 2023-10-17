@@ -1,0 +1,54 @@
+.modal-more{
+    background: #272727;
+    border-radius: 8px;
+    
+    position: absolute;
+    right: 8px;
+    top: 6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+
+    list-style: none;
+    z-index: 9999;
+
+
+}
+.modal-more li button{
+    text-decoration: none;
+    color: #F5F5F5;
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    font-style: normal;
+}
+.modal-more li img{
+    text-decoration: none;
+    color: #F5F5F5;
+    border: none;
+    background: transparent;
+    width: auto;
+    cursor: pointer;
+}
+.modal-more li{
+    width: 100%;
+    text-align: center;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+    left: -20px;
+    cursor: pointer;
+}
+.modal-more li:hover{
+    background: #2b2b2b;
+}
+.close-list{
+    width: 24px;
+    height: 24px;
+}
+.modal-more .delete{
+    color: rgb(230, 103, 103);
+}

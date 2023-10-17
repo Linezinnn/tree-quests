@@ -194,6 +194,21 @@ header .list-menu ul li:hover{
     width: 36px;
     border-radius: 50%;
 }
+.box-question:hover > .content.tags.edit-questionary-btn{
+    background-color: red;
+}
+.edit-questionary-btn{
+    align-self: center;
+    margin-left: auto;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.edit-questionary-btn svg{
+    font-size: 32px;
+}
 
 
 

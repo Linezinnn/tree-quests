@@ -29,9 +29,9 @@ export function listQuestionaries(filter){
         category = questionary[8]
         
         if (filter === "" || filter === undefined) {
-            putQuestionary(category, name, color, bgImage);
+            putQuestionary(category, name, color, bgImage, i);
         } else if (filterCategory || filterName) {
-            putQuestionary(category, name, color, bgImage);
+            putQuestionary(category, name, color, bgImage, i);
         }
         
         calcularAlturaDaPagina()
@@ -39,19 +39,26 @@ export function listQuestionaries(filter){
 
 } 
 
-function putQuestionary(category, name, color, bgImage){
+function putQuestionary(category, name, color, bgImage, questionaryId){
 
     const boxQuestionary = document.createElement("div")
     const questionsContent = document.querySelector('.boxes-content')
 
     boxQuestionary.className = 'box-question'
     boxQuestionary.innerHTML = `
-        <img src="${bgImage}">
-        <div class="content">
-            <h3>` + name + `</h3>
-            <div class="tags">
-                <span>` + category + `</span>
-                <div class="primary-color" style="background-color: ${color}"></div>
+        <div class="container-question">
+            <img src="${bgImage}">
+            <div class="content">
+                <h3>` + name + `</h3>
+                <div class="tags">
+                    <span>` + category + `</span>
+                    <div class="primary-color" style="background-color: ${color}"></div>
+                    <button class="edit-questionary-btn" data-questionaryId="${questionaryId}">            
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     `

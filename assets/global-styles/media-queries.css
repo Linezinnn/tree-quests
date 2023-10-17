@@ -57,5 +57,9 @@
     header nav .input-wrapper #open-search-mobile{
         display: block;
     }
+
+    .modal-more{
+        top: 4rem;
+    }
     
 }

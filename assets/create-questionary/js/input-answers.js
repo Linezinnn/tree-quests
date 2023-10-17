@@ -128,7 +128,7 @@ function refreshOptions(question){
 
 }
 
-function correctAnswer(id, question) {
+export function correctAnswer(id, question) {
 
     for(let i = 1; i <= 5; i++){
 
