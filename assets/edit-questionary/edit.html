@@ -9,13 +9,11 @@
 
     <link rel="shortcut icon" href="../svg/treeQuests-logo.svg" type="image/x-icon">
 
-    <script src="./js/auto-scriber.js" type="module"></script>
+    <script src="./js/auto-scriber.js" type="module" defer></script>
 
     <script src="../create-questionary/js/capture-values.js" type="module"></script>
     <script src="../create-questionary/js/progress-bar.js"></script>
-    <script src="../create-questionary/js/new-answer.js"></script>
     <script src="../create-questionary/js/remove-answer.js"></script>
-    <script src="../create-questionary/js/input-answers.js"></script>
     <script src="../create-questionary/js/view-colors.js"></script>
     <script src="../create-questionary/js/update-message-bg-image.js" defer></script>
     
@@ -129,7 +127,7 @@
                         <h1>Questão 1</h1>
                     </div>
                     <input type="text" id="text-question1" class="text-question" placeholder="Digite a pergunta">
-                    <select onclick="refreshOptions(1)" id="type-question1" class="type-question">
+                    <select onchange="refreshOptions(1)" id="type-question1" class="type-question">
                         <option value="vd">Verdadeiro ou falso</option>
                         <option value="3">2 respostas</option>
                         <option value="4">3 respostas</option>

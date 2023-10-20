@@ -6,8 +6,6 @@ export function newQuestion() {
     var counterQuestions = localStorage.getItem('counterQuestions')
     counterQuestions++
 
-    console.log(counterQuestions)
-
     const answerContainer = document.querySelector('.answer-content')
     const navAnswer = document.querySelector('.nav-answer')
     const answerContent = document.createElement("div")
@@ -22,7 +20,7 @@ export function newQuestion() {
             <h1 id="questionNumber-` + counterQuestions + `">Questão ` + counterQuestions + `</h1>
         </div>
         <input type="text" id="text-question` + counterQuestions + `" class="text-question" placeholder="Digite a pergunta">
-        <select onclick="refreshOptions(` + counterQuestions + `)" id="type-question` + counterQuestions + `" class="type-question">
+        <select onchange="refreshOptions(` + counterQuestions + `)" id="type-question` + counterQuestions + `" class="type-question">
             <option value="vd">Verdadeiro ou falso</option>
             <option value="3">2 respostas</option>
             <option value="4">3 respostas</option>

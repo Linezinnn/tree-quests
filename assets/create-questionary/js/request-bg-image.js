@@ -1,4 +1,4 @@
-export function requestBgImage() {
+export async function requestBgImage() {
     return new Promise((resolve, reject) => {
         const fileInput = document.querySelector('#bg-image-question');
         const file = fileInput.files[0]

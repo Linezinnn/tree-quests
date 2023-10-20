@@ -1,13 +1,10 @@
-// import { correctAnswer } from "../../create-questionary/js/input-answers.js"
-import { correctAnswer } from "../../create-questionary/js/input-answers.js"
+import { correctAnswer, refreshOptions } from "../../create-questionary/js/input-answers.js"
 import { newQuestion } from "../../create-questionary/js/new-answer.js"
 
 const questionaryBD = JSON.parse(localStorage.getItem('questionaryBD'))
 const questionaryId = localStorage.getItem('@edit-questionary-id') 
 
 const questionary = questionaryBD[questionaryId]
-
-console.log(questionary)
 
 scribeValue(questionary[0], document.querySelector('#name-question'))
 scribeValue(questionary[1], document.querySelector('#menssage-question'))
@@ -48,6 +45,10 @@ function scribeQuestions(questions){
 
         scribeValue(question[0], document.querySelector(`#text-question${index + 1}`))
         scribeValue(question[1], document.querySelector(`#type-question${index + 1}`))
+
+        refreshOptions(index + 1)
+        
+
         scribeValue(question[2], document.querySelector(`#pts-question${index + 1}`))
         
         const answers = document.querySelectorAll(`input[name='answers-question${index + 1}']`)
@@ -61,7 +62,6 @@ function scribeQuestions(questions){
                 correctAnswer(answer, index + 1)
             }
         })
-        
 
         scribeValue(question[4], document.querySelector(`#answer1-${index + 1}`))
         scribeValue(question[5], document.querySelector(`#answer2-${index + 1}`))

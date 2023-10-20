@@ -29,7 +29,9 @@ for(let i = 5; i >= 1; i--){
 
 var lastType = ''
 
-function refreshOptions(question){
+
+export function refreshOptions(question){
+    console.log(question)
 
     var answersGroup = document.getElementsByName('answers-question' + question)
 
@@ -69,6 +71,8 @@ function refreshOptions(question){
                 answerText1.style.pointerEvents = "all"
 
                 answerText2.style.pointerEvents = "all"
+
+                console.log("aa" + i)
             }
 
             if(type == 'vd'){
@@ -113,6 +117,8 @@ function refreshOptions(question){
                     answerBox.style.userSelect = "none"
                     answerBox.style.cursor = "not-allowed"
                     answerText.value = ''
+
+                    console.log(type)
                     
                     answerRadio.style.pointerEvents = "none"
                     answerText.style.pointerEvents = "none"
@@ -143,3 +149,6 @@ export function correctAnswer(id, question) {
     }
 
 }
+
+window.refreshOptions = refreshOptions
+window.correctAnswer = correctAnswer
